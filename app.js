@@ -13,7 +13,8 @@ orderBtn.addEventListener('click', (e) => {
     e.preventDefault()
     document.getElementById('error').innerText = ''
     let name = document.getElementById('user_name').value
-    let date = document.getElementById('date').value
+    let date = document.getElementById('date').value.stringify
+    
     if(name.length < 5) {
         document.getElementById('error').innerText = 'Ошибка в имени'
         return
