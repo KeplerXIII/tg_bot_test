@@ -13,7 +13,7 @@ orderBtn.addEventListener('click', (e) => {
     e.preventDefault()
     document.getElementById('error').innerText = ''
     let name = document.getElementById('user_name').value
-    let date = document.getElementById('date').innerText
+    let date = document.getElementById('date').value
 
     if (!date) {
         document.getElementById('error').innerText = 'Установите дату'
@@ -33,4 +33,5 @@ orderBtn.addEventListener('click', (e) => {
     tg.sendData(JSON.stringify(data))
 
     tg.close()
+    console.log(data)
 })
