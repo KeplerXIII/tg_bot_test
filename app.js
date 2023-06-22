@@ -6,7 +6,7 @@ tg.expand();
 buyBtn.addEventListener('click', () => {
     document.getElementById('main').style.display = 'none'
     document.getElementById('form').style.display = 'block'
-    document.getElementById('user_name').value = tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe.user.last_name
+    // document.getElementById('user_name').value = tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe.user.last_name
 })
 
 orderBtn.addEventListener('click', () => {
@@ -20,6 +20,7 @@ orderBtn.addEventListener('click', () => {
     let data = {
         name: name
     }
+
     tg.sendData(JSON.stringify(data))
 
     tg.close()
