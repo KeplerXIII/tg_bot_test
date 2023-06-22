@@ -19,14 +19,15 @@ orderBtn.addEventListener('click', (e) => {
         document.getElementById('error').innerText = 'Установите дату'
         return
     }
+
     if(name.length < 5) {
         document.getElementById('error').innerText = 'Ошибка в имени'
         return
     }
-
+    
     let data = {
         name: name,
-        date: newDate
+        date: date
     }
 
     tg.sendData(JSON.stringify(data))
