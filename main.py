@@ -6,8 +6,8 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
-    markup = types.InlineKeyboardMarkup()
-    markup.add(types.InlineKeyboardButton('Открыть страницу', web_app=WebAppInfo(url='https://keplerxiii.github.io/tg_bot_test/')))
+    markup = types.ReplyKeyboardMarkup()
+    markup.add(types.KeyboardButton('Открыть страницу', web_app=WebAppInfo(url='https://keplerxiii.github.io/tg_bot_test/')))
     await message.answer('Привет, мой друг!', reply_markup=markup)
 
 executor.start_polling(dp)

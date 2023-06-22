@@ -1,14 +1,26 @@
 let tg = window.Telegram.WebApp
 let buyBtn = document.getElementById('buy')
 let orderBtn = document.getElementById('order')
+tg.expand();
 
 buyBtn.addEventListener('click', () => {
-    document.getElementById('main').style.display = 'none';
-    document.getElementById('form').style.display = 'block';
+    document.getElementById('main').style.display = 'none'
+    document.getElementById('form').style.display = 'block'
     document.getElementById('user_name').value = tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe.user.last_name
-    
 })
 
 orderBtn.addEventListener('click', () => {
+    document.getElementById('error').innerText = ''
+    let name = document.getElementById('user_name').value
+    if(name.length < 5) {
+        document.getElementById('error').innerText = 'Ошибка в имени'
+        return
+    }
+
+    let data = {
+        name: name
+    }
+    tg.sendData(JSON.stringify(data))
+
     tg.close()
 })
