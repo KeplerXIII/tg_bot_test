@@ -14,14 +14,7 @@ orderBtn.addEventListener('click', (e) => {
     document.getElementById('error').innerText = ''
     let name = document.getElementById('user_name').value
     let date = document.getElementById('date').value
-    if (date) {
-        var hiddenInput = document.createElement("input")
-        hiddenInput.setAttribute("type", "hidden");
-        hiddenInput.setAttribute("name", "selectedDate");
-        hiddenInput.setAttribute("value", date);
-        document.appendChild(hiddenInput);
-        newDate = hiddenInput.value
-    }
+
     if (!date) {
         document.getElementById('error').innerText = 'Установите дату'
         return
