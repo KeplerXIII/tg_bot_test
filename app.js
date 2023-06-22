@@ -14,7 +14,7 @@ orderBtn.addEventListener('click', (e) => {
     document.getElementById('error').innerText = ''
     let name = document.getElementById('user_name').value
     let date = document.getElementById('date').value
-    
+    console.log(date)
     if(name.length < 5) {
         document.getElementById('error').innerText = 'Ошибка в имени'
         return
