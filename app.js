@@ -9,7 +9,8 @@ buyBtn.addEventListener('click', () => {
     // document.getElementById('user_name').value = tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe.user.last_name
 })
 
-orderBtn.addEventListener('click', () => {
+orderBtn.addEventListener('click', (e) => {
+    e.preventDefault()
     document.getElementById('error').innerText = ''
     let name = document.getElementById('user_name').value
     if(name.length < 5) {
