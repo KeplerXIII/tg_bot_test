@@ -60,6 +60,7 @@ statsBtn.addEventListener('click', (e) => {
             }
 
     let type = (date2) ? 'period':'one_day';
+
     let data = {
         type: type,
         date1: date1,
