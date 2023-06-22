@@ -39,20 +39,30 @@
 
 let tg = window.Telegram.WebApp
 let statsBtn = document.getElementById('stats')
+let prdBtn = document.getElementById('period')
+let date2 = document.getElementById('date2')
 tg.expand()
+
+prdBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    date2.style.display = 'block'
+})
 
 statsBtn.addEventListener('click', (e) => {
     e.preventDefault()
     document.getElementById('error').innerText = ''
     let date1 = document.getElementById('date1').value
+    let date2 = document.getElementById('date2').value
     if (date1) {} else {
                 document.getElementById('error').innerText = 'Выбери дату'
                 return
             }
-    
+
+    let type = (date2) ? 'one_day' : 'period';
     let data = {
-        type: 'one_day',
-        date1: date1
+        type: type,
+        date1: date1,
+        date2: date2
     }
 
     tg.sendData(JSON.stringify(data))
