@@ -13,13 +13,15 @@ orderBtn.addEventListener('click', (e) => {
     e.preventDefault()
     document.getElementById('error').innerText = ''
     let name = document.getElementById('user_name').value
+    let date = document.getElementById('date').value
     if(name.length < 5) {
         document.getElementById('error').innerText = 'Ошибка в имени'
         return
     }
 
     let data = {
-        name: name
+        name: name,
+        date: date
     }
 
     tg.sendData(JSON.stringify(data))
