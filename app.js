@@ -15,10 +15,11 @@ orderBtn.addEventListener('click', (e) => {
     let name = document.getElementById('user_name').value
     let date = document.getElementById('date').value
 
-    // if (!date) {
-    //     document.getElementById('error').innerText = 'Установите дату'
-    //     return
-    // }
+    if (date) {
+    } else {
+        document.getElementById('error').innerText = 'Ошибка в имени'
+        return
+    }
 
     if(name.length < 5) {
         document.getElementById('error').innerText = 'Ошибка в имени'
