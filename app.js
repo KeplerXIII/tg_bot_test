@@ -46,6 +46,7 @@ tg.expand()
 prdBtn.addEventListener('click', (e) => {
     e.preventDefault()
     date2.style.display = 'block'
+    prdBtn.style.display = 'none'
 })
 
 statsBtn.addEventListener('click', (e) => {
