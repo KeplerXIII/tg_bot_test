@@ -10,4 +10,8 @@ async def start(message: types.Message):
     markup.add(types.KeyboardButton('Открыть страницу', web_app=WebAppInfo(url='https://keplerxiii.github.io/tg_bot_test/')))
     await message.answer('Привет, мой друг!', reply_markup=markup)
 
+@dp.message_handler(content_types=['web_app_data'])
+async def web_app(mesage: types.Message):
+    await mesage.answer(mesage.web_app_data.data)
+
 executor.start_polling(dp)
